@@ -10,11 +10,19 @@ import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
 import org.springframework.batch.core.scope.context.ChunkContext;
 import org.springframework.batch.core.step.tasklet.Tasklet;
+import org.springframework.batch.item.ItemProcessor;
+import org.springframework.batch.item.ItemReader;
+import org.springframework.batch.item.ItemWriter;
+import org.springframework.batch.item.function.FunctionItemProcessor;
+import org.springframework.batch.item.support.IteratorItemReader;
 import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import java.util.Arrays;
+import java.util.List;
 
 @EnableBatchProcessing
 @Configuration
@@ -37,31 +45,72 @@ public class PrimeiroJobSpringBatchConfig {
      * Chunk => cada chunk possui sua propria transação
      */
 
+//    @Bean // Metodo colocado no contexto do Spring
+//    public Job imprimeOlaJog(){
+//        return jobBuilderFactory.get("imprimeOlaJog")
+//                .start(imprimeOlaStep())
+//                .incrementer(new RunIdIncrementer()) // Adiciona um novo ID a cada execução para cada vez que esse Job for executado
+//                .build();
+//    }
+
     @Bean // Metodo colocado no contexto do Spring
-    public Job imprimeOlaJog(){
-        return jobBuilderFactory.get("imprimeOlaJog")
-                .start(imprimeOlaStep())
+    public Job imprimeParImparJob(){
+        return jobBuilderFactory.get("imprimeOlaJog").start(imprimeParImparStep())
                 .incrementer(new RunIdIncrementer()) // Adiciona um novo ID a cada execução para cada vez que esse Job for executado
                 .build();
     }
 
 
-    private Step imprimeOlaStep() {
-        return stepBuilderFactory.get("imprimeOlaStep")
-                .tasklet(imprimeOlaTasklet(null)) // Obtendo o nome dos parametros de execucao do Job
+//    private Step imprimeOlaStep() {
+//        return stepBuilderFactory.get("imprimeOlaStep")
+//                .tasklet(imprimeOlaTasklet(null)) // Obtendo o nome dos parametros de execucao do Job
+//                .build();
+//    }
+
+    private Step imprimeParImparStep() {
+        return stepBuilderFactory
+                .get("imprimeOlaStep")
+                .<Integer, String>chunk(1)  // Le um Integer e escreve uma String
+                .reader(contaAteDezReader())
+                .processor(paraOuImparProcessor())
+                .writer(imprimeWriter())
                 .build();
     }
 
-    @Bean
-    @StepScope // Metodo adicionado no contexto(escopo) de Step
-    public Tasklet imprimeOlaTasklet(@Value("#{jobParameters['nome']}") String nome) { // Obtendo o nome dos parametros de execucao do Job
-        return new Tasklet() {
-            @Override
-            public RepeatStatus execute(StepContribution stepContribution, ChunkContext chunkContext) throws Exception {
-                System.out.println(String.format("Olá, %s!", nome));
-                return RepeatStatus.FINISHED;
-            }
-        };
+    /**
+     * Metodo que conta de 1 a 10
+     * ItemWriter é uma interface e para implementar essa interface sera usado o IteratorItemReader
+     * @return
+     */
+    private IteratorItemReader<Integer> contaAteDezReader() {
+        List<Integer> numerosDeUmAteDez = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        return new IteratorItemReader<Integer>(numerosDeUmAteDez.iterator());
     }
+
+    /**
+     * Metodo que verifica se o numero e par ou impar
+     * ItemProcessor e uma interface, e para implementar essa interface sera usado o FunctionItemProcessor.
+     * @return
+     */
+    private FunctionItemProcessor<Integer, String> paraOuImparProcessor() { // recebe do leitor um Integer e devolve para o escritor uma String
+        return new FunctionItemProcessor<Integer, String>
+                (item ->  item % 2 == 0 ? String.format("Item %s é Par", item) : String.format("Item %s é Impar", item));
+    }
+
+    private ItemWriter<String> imprimeWriter(){
+       return itens -> itens.forEach(System.out::println);
+    }
+
+//    @Bean
+//    @StepScope // Metodo adicionado no contexto(escopo) de Step
+//    public Tasklet imprimeOlaTasklet(@Value("#{jobParameters['nome']}") String nome) { // Obtendo o nome dos parametros de execucao do Job
+//        return new Tasklet() {
+//            @Override
+//            public RepeatStatus execute(StepContribution stepContribution, ChunkContext chunkContext) throws Exception {
+//                System.out.println(String.format("Olá, %s!", nome));
+//                return RepeatStatus.FINISHED; // termina a execução
+//            }
+//        };
+//    }
 
 }
