@@ -45,13 +45,6 @@ public class PrimeiroJobSpringBatchConfig {
      * Chunk => cada chunk possui sua propria transação
      */
 
-//    @Bean // Metodo colocado no contexto do Spring
-//    public Job imprimeOlaJog(){
-//        return jobBuilderFactory.get("imprimeOlaJog")
-//                .start(imprimeOlaStep())
-//                .incrementer(new RunIdIncrementer()) // Adiciona um novo ID a cada execução para cada vez que esse Job for executado
-//                .build();
-//    }
 
     @Bean // Metodo colocado no contexto do Spring
     public Job imprimeParImparJob(){
@@ -60,12 +53,6 @@ public class PrimeiroJobSpringBatchConfig {
                 .build();
     }
 
-
-//    private Step imprimeOlaStep() {
-//        return stepBuilderFactory.get("imprimeOlaStep")
-//                .tasklet(imprimeOlaTasklet(null)) // Obtendo o nome dos parametros de execucao do Job
-//                .build();
-//    }
 
     private Step imprimeParImparStep() {
         return stepBuilderFactory
@@ -100,17 +87,5 @@ public class PrimeiroJobSpringBatchConfig {
     private ItemWriter<String> imprimeWriter(){
        return itens -> itens.forEach(System.out::println);
     }
-
-//    @Bean
-//    @StepScope // Metodo adicionado no contexto(escopo) de Step
-//    public Tasklet imprimeOlaTasklet(@Value("#{jobParameters['nome']}") String nome) { // Obtendo o nome dos parametros de execucao do Job
-//        return new Tasklet() {
-//            @Override
-//            public RepeatStatus execute(StepContribution stepContribution, ChunkContext chunkContext) throws Exception {
-//                System.out.println(String.format("Olá, %s!", nome));
-//                return RepeatStatus.FINISHED; // termina a execução
-//            }
-//        };
-//    }
 
 }
