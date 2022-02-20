@@ -1,4 +1,4 @@
-package br.com.wepdev.springbatch;
+package br.com.wepdev.springbatch.job;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -31,9 +31,6 @@ public class PrimeiroJobSpringBatchConfig {
     @Autowired
     private JobBuilderFactory jobBuilderFactory;
 
-    @Autowired
-    private StepBuilderFactory stepBuilderFactory;
-
     /**
      * Um Job e definido por uma sequencia encadeada de Steps, e cada Step tem sua propria logica, e as logicas podem ser do tipo
      * Tasklet ou Chunk.
@@ -47,45 +44,12 @@ public class PrimeiroJobSpringBatchConfig {
 
 
     @Bean // Metodo colocado no contexto do Spring
-    public Job imprimeParImparJob(){
-        return jobBuilderFactory.get("imprimeOlaJog").start(imprimeParImparStep())
-                .incrementer(new RunIdIncrementer()) // Adiciona um novo ID a cada execução para cada vez que esse Job for executado
+    public Job imprimeOlaJog(Step imprimeOlaStep){
+        return jobBuilderFactory
+                .get("imprimeOlaJog")
+                .start(imprimeOlaStep)
                 .build();
     }
 
-
-    private Step imprimeParImparStep() {
-        return stepBuilderFactory
-                .get("imprimeOlaStep")
-                .<Integer, String>chunk(1)  // Le um Integer e escreve uma String
-                .reader(contaAteDezReader())
-                .processor(paraOuImparProcessor())
-                .writer(imprimeWriter())
-                .build();
-    }
-
-    /**
-     * Metodo que conta de 1 a 10
-     * ItemWriter é uma interface e para implementar essa interface sera usado o IteratorItemReader
-     * @return
-     */
-    private IteratorItemReader<Integer> contaAteDezReader() {
-        List<Integer> numerosDeUmAteDez = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-        return new IteratorItemReader<Integer>(numerosDeUmAteDez.iterator());
-    }
-
-    /**
-     * Metodo que verifica se o numero e par ou impar
-     * ItemProcessor e uma interface, e para implementar essa interface sera usado o FunctionItemProcessor.
-     * @return
-     */
-    private FunctionItemProcessor<Integer, String> paraOuImparProcessor() { // recebe do leitor um Integer e devolve para o escritor uma String
-        return new FunctionItemProcessor<Integer, String>
-                (item ->  item % 2 == 0 ? String.format("Item %s é Par", item) : String.format("Item %s é Impar", item));
-    }
-
-    private ItemWriter<String> imprimeWriter(){
-       return itens -> itens.forEach(System.out::println);
-    }
 
 }
