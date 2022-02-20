@@ -44,9 +44,9 @@ public class PrimeiroJobSpringBatchConfig {
 
 
     @Bean // Metodo colocado no contexto do Spring
-    public Job imprimeOlaJog(Step imprimeOlaStep){
+    public Job imprimeOlaJob(Step imprimeOlaStep){
         return jobBuilderFactory
-                .get("imprimeOlaJog")
+                .get("imprimeOlaJob")
                 .start(imprimeOlaStep)
                 .build();
     }
