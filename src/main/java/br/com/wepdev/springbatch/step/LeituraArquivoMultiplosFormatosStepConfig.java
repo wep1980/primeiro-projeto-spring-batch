@@ -1,5 +1,6 @@
 package br.com.wepdev.springbatch.step;
 
+import br.com.wepdev.springbatch.reader.ArquivoClienteTransacaoReader;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.item.ItemWriter;
@@ -18,7 +19,7 @@ public class LeituraArquivoMultiplosFormatosStepConfig {
 		return stepBuilderFactory
 				.get("leituraArquivoMultiplosFormatosStep")
 				.chunk(1)
-				.reader(leituraArquivoMultiplosFormatosReader)
+				.reader(new ArquivoClienteTransacaoReader(leituraArquivoMultiplosFormatosReader)) // Chamando a classe de leitura de arquivos customizada que le as transacoes de clientes, caso exista
 				.writer(leituraArquivoMultiplosFormatosItemWriter)
 				.build();
 	}

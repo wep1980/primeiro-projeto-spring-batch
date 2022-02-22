@@ -353,3 +353,17 @@ java.lang.Exception: null
 2022-02-22 16:32:22,949 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoMultiplosFormatosJob]] completed with the following parameters: [{run.id=1, arquivoClientes=file:files/clientes.txt}] and the following status: [COMPLETED] in 134ms
 2022-02-22 16:32:22,954 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
 2022-02-22 16:32:22,961 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-02-22 18:06:32,995 INFO b.c.w.s.SpringbatchApplication [main] Starting SpringbatchApplication using Java 11.0.9 on DESKTOP-C00EECN with PID 11712 (C:\Users\Waldir\IdeaProjects\demo\springbatch\target\classes started by Waldir in C:\Users\Waldir\IdeaProjects\demo\springbatch)
+2022-02-22 18:06:32,995 INFO b.c.w.s.SpringbatchApplication [main] No active profile set, falling back to default profiles: default
+2022-02-22 18:06:33,315 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2022-02-22 18:06:33,415 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2022-02-22 18:06:33,494 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-02-22 18:06:33,613 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2022-02-22 18:06:33,675 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2022-02-22 18:06:33,725 INFO b.c.w.s.SpringbatchApplication [main] Started SpringbatchApplication in 1.245 seconds (JVM running for 2.571)
+2022-02-22 18:06:33,814 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoMultiplosFormatosJob]] launched with the following parameters: [{run.id=2, arquivoClientes=file:files/clientes.txt}]
+2022-02-22 18:06:33,854 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [leituraArquivoMultiplosFormatosStep]
+2022-02-22 18:06:33,925 INFO o.s.b.c.s.AbstractStep [main] Step: [leituraArquivoMultiplosFormatosStep] executed in 71ms
+2022-02-22 18:06:33,943 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoMultiplosFormatosJob]] completed with the following parameters: [{run.id=2, arquivoClientes=file:files/clientes.txt}] and the following status: [COMPLETED] in 110ms
+2022-02-22 18:06:33,943 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-02-22 18:06:33,957 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
