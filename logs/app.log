@@ -1,0 +1,341 @@
+2022-02-20 12:48:02,206 INFO b.c.w.s.SpringbatchApplication [main] Starting SpringbatchApplication using Java 11.0.9 on DESKTOP-C00EECN with PID 13816 (C:\Users\Waldir\IdeaProjects\demo\springbatch\target\classes started by Waldir in C:\Users\Waldir\IdeaProjects\demo\springbatch)
+2022-02-20 12:48:02,206 INFO b.c.w.s.SpringbatchApplication [main] No active profile set, falling back to default profiles: default
+2022-02-20 12:48:02,522 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2022-02-20 12:48:02,618 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2022-02-20 12:48:02,697 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-02-20 12:48:02,785 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2022-02-20 12:48:02,836 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2022-02-20 12:48:02,884 INFO b.c.w.s.SpringbatchApplication [main] Started SpringbatchApplication in 1.195 seconds (JVM running for 2.07)
+2022-02-20 12:48:02,965 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=imprimeOlaJob]] launched with the following parameters: [{}]
+2022-02-20 12:48:02,996 INFO o.s.b.c.j.SimpleStepHandler [main] Step already complete or not restartable, so no action to execute: StepExecution: id=12, version=3, name=imprimeOlaStep, status=COMPLETED, exitStatus=COMPLETED, readCount=0, filterCount=0, writeCount=0 readSkipCount=0, writeSkipCount=0, processSkipCount=0, commitCount=1, rollbackCount=0, exitDescription=
+2022-02-20 12:48:02,996 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=imprimeOlaJob]] completed with the following parameters: [{}] and the following status: [COMPLETED] in 15ms
+2022-02-20 12:48:03,012 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-02-20 12:48:03,012 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-02-22 09:34:03,261 INFO b.c.w.s.SpringbatchApplication [main] Starting SpringbatchApplication using Java 11.0.9 on DESKTOP-C00EECN with PID 17496 (C:\Users\Waldir\IdeaProjects\demo\springbatch\target\classes started by Waldir in C:\Users\Waldir\IdeaProjects\demo\springbatch)
+2022-02-22 09:34:03,261 INFO b.c.w.s.SpringbatchApplication [main] No active profile set, falling back to default profiles: default
+2022-02-22 09:34:03,909 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2022-02-22 09:34:04,071 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2022-02-22 09:34:04,201 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-02-22 09:34:04,341 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2022-02-22 09:34:04,420 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2022-02-22 09:34:04,468 INFO b.c.w.s.SpringbatchApplication [main] Started SpringbatchApplication in 1.865 seconds (JVM running for 2.836)
+2022-02-22 09:34:04,541 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoLarguraFixaJob]] launched with the following parameters: [{run.id=1}]
+2022-02-22 09:34:04,571 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [leituraArquivoLarguraFixaStep]
+2022-02-22 09:34:04,604 ERROR o.s.b.c.s.AbstractStep [main] Encountered an error executing step leituraArquivoLarguraFixaStep in job arquivoLarguraFixaJob
+org.springframework.batch.item.ItemStreamException: Failed to initialize the reader
+	at org.springframework.batch.item.support.AbstractItemCountingItemStreamItemReader.open(AbstractItemCountingItemStreamItemReader.java:153) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	at org.springframework.batch.item.support.AbstractItemCountingItemStreamItemReader$$FastClassBySpringCGLIB$$ebb633d0.invoke(<generated>) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783) ~[spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:137) ~[spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:124) ~[spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698) ~[spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.batch.item.file.FlatFileItemReader$$EnhancerBySpringCGLIB$$8a652b94.open(<generated>) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	at org.springframework.batch.item.support.CompositeItemStream.open(CompositeItemStream.java:104) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.step.tasklet.TaskletStep.open(TaskletStep.java:311) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:205) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:152) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.job.AbstractJob.handleStep(AbstractJob.java:413) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.job.SimpleJob.doExecute(SimpleJob.java:136) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:320) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:149) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50) [spring-core-5.3.15.jar:5.3.15]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140) [spring-batch-core-4.3.4.jar:4.3.4]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) [spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) [spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) [spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) [spring-aop-5.3.15.jar:5.3.15]
+	at com.sun.proxy.$Proxy66.run(Unknown Source) [?:?]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.execute(JobLauncherApplicationRunner.java:199) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.executeLocalJobs(JobLauncherApplicationRunner.java:173) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.launchJobFromProperties(JobLauncherApplicationRunner.java:160) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:155) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:150) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:760) [spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:750) [spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:309) [spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) [spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) [spring-boot-2.6.3.jar:2.6.3]
+	at br.com.wepdev.springbatch.SpringbatchApplication.main(SpringbatchApplication.java:10) [classes/:?]
+Caused by: java.lang.IllegalArgumentException: Input resource must be set
+	at org.springframework.util.Assert.notNull(Assert.java:201) ~[spring-core-5.3.15.jar:5.3.15]
+	at org.springframework.batch.item.file.FlatFileItemReader.doOpen(FlatFileItemReader.java:251) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	at org.springframework.batch.item.support.AbstractItemCountingItemStreamItemReader.open(AbstractItemCountingItemStreamItemReader.java:150) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	... 43 more
+2022-02-22 09:34:04,604 INFO o.s.b.c.s.AbstractStep [main] Step: [leituraArquivoLarguraFixaStep] executed in 33ms
+2022-02-22 09:34:04,619 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoLarguraFixaJob]] completed with the following parameters: [{run.id=1}] and the following status: [FAILED] in 62ms
+2022-02-22 09:34:04,619 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-02-22 09:34:04,642 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-02-22 09:47:58,184 INFO b.c.w.s.SpringbatchApplication [main] Starting SpringbatchApplication using Java 11.0.9 on DESKTOP-C00EECN with PID 21404 (C:\Users\Waldir\IdeaProjects\demo\springbatch\target\classes started by Waldir in C:\Users\Waldir\IdeaProjects\demo\springbatch)
+2022-02-22 09:47:58,184 INFO b.c.w.s.SpringbatchApplication [main] No active profile set, falling back to default profiles: default
+2022-02-22 09:47:58,550 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2022-02-22 09:47:58,654 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2022-02-22 09:47:58,733 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-02-22 09:47:58,830 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2022-02-22 09:47:58,893 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2022-02-22 09:47:58,924 INFO b.c.w.s.SpringbatchApplication [main] Started SpringbatchApplication in 1.227 seconds (JVM running for 2.215)
+2022-02-22 09:47:59,020 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoLarguraFixaJob]] launched with the following parameters: [{run.id=2, arquivoClientes=file:files/clientes.txt}]
+2022-02-22 09:47:59,053 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [leituraArquivoLarguraFixaStep]
+2022-02-22 09:47:59,130 INFO o.s.b.c.s.AbstractStep [main] Step: [leituraArquivoLarguraFixaStep] executed in 77ms
+2022-02-22 09:47:59,146 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoLarguraFixaJob]] completed with the following parameters: [{run.id=2, arquivoClientes=file:files/clientes.txt}] and the following status: [COMPLETED] in 110ms
+2022-02-22 09:47:59,162 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-02-22 09:47:59,162 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-02-22 14:40:46,633 INFO b.c.w.s.SpringbatchApplication [main] Starting SpringbatchApplication using Java 11.0.9 on DESKTOP-C00EECN with PID 17460 (C:\Users\Waldir\IdeaProjects\demo\springbatch\target\classes started by Waldir in C:\Users\Waldir\IdeaProjects\demo\springbatch)
+2022-02-22 14:40:46,635 INFO b.c.w.s.SpringbatchApplication [main] No active profile set, falling back to default profiles: default
+2022-02-22 14:40:47,003 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2022-02-22 14:40:47,132 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2022-02-22 14:40:47,216 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-02-22 14:40:47,341 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2022-02-22 14:40:47,393 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2022-02-22 14:40:47,453 INFO b.c.w.s.SpringbatchApplication [main] Started SpringbatchApplication in 1.447 seconds (JVM running for 2.499)
+2022-02-22 14:40:47,515 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoLarguraFixaJob]] launched with the following parameters: [{arquivoClientes=file:files/clientes.txt}]
+2022-02-22 14:40:47,544 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [leituraArquivoLarguraFixaStep]
+2022-02-22 14:40:47,597 ERROR o.s.b.c.s.AbstractStep [main] Encountered an error executing step leituraArquivoLarguraFixaStep in job arquivoLarguraFixaJob
+java.lang.Exception: null
+	at br.com.wepdev.springbatch.writer.LeituraArquivoLarguraFixaWriterConfig.lambda$leituraArquivoLarguraFixaWriter$0(LeituraArquivoLarguraFixaWriterConfig.java:16) ~[classes/:?]
+	at org.springframework.batch.core.step.item.SimpleChunkProcessor.writeItems(SimpleChunkProcessor.java:193) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.step.item.SimpleChunkProcessor.doWrite(SimpleChunkProcessor.java:159) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.step.item.SimpleChunkProcessor.write(SimpleChunkProcessor.java:294) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.step.item.SimpleChunkProcessor.process(SimpleChunkProcessor.java:217) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.step.item.ChunkOrientedTasklet.execute(ChunkOrientedTasklet.java:77) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:407) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:331) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140) ~[spring-tx-5.3.15.jar:5.3.15]
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:273) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:82) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:258) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:208) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:152) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.job.AbstractJob.handleStep(AbstractJob.java:413) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.job.SimpleJob.doExecute(SimpleJob.java:136) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:320) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:149) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50) [spring-core-5.3.15.jar:5.3.15]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140) [spring-batch-core-4.3.4.jar:4.3.4]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) [spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) [spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) [spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) [spring-aop-5.3.15.jar:5.3.15]
+	at com.sun.proxy.$Proxy66.run(Unknown Source) [?:?]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.execute(JobLauncherApplicationRunner.java:199) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.executeLocalJobs(JobLauncherApplicationRunner.java:173) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.launchJobFromProperties(JobLauncherApplicationRunner.java:160) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:155) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:150) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:760) [spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:750) [spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:309) [spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) [spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) [spring-boot-2.6.3.jar:2.6.3]
+	at br.com.wepdev.springbatch.SpringbatchApplication.main(SpringbatchApplication.java:10) [classes/:?]
+2022-02-22 14:40:47,606 INFO o.s.b.c.s.AbstractStep [main] Step: [leituraArquivoLarguraFixaStep] executed in 61ms
+2022-02-22 14:40:47,619 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoLarguraFixaJob]] completed with the following parameters: [{arquivoClientes=file:files/clientes.txt}] and the following status: [FAILED] in 90ms
+2022-02-22 14:40:47,624 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-02-22 14:40:47,636 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-02-22 14:42:31,725 INFO b.c.w.s.SpringbatchApplication [main] Starting SpringbatchApplication using Java 11.0.9 on DESKTOP-C00EECN with PID 9260 (C:\Users\Waldir\IdeaProjects\demo\springbatch\target\classes started by Waldir in C:\Users\Waldir\IdeaProjects\demo\springbatch)
+2022-02-22 14:42:31,727 INFO b.c.w.s.SpringbatchApplication [main] No active profile set, falling back to default profiles: default
+2022-02-22 14:42:32,192 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2022-02-22 14:42:32,320 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2022-02-22 14:42:32,414 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-02-22 14:42:32,584 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2022-02-22 14:42:32,651 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2022-02-22 14:42:32,718 INFO b.c.w.s.SpringbatchApplication [main] Started SpringbatchApplication in 1.7 seconds (JVM running for 3.233)
+2022-02-22 14:42:32,798 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoLarguraFixaJob]] launched with the following parameters: [{arquivoClientes=file:files/clientes.txt}]
+2022-02-22 14:42:32,831 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [leituraArquivoLarguraFixaStep]
+2022-02-22 14:42:32,902 ERROR o.s.b.c.s.AbstractStep [main] Encountered an error executing step leituraArquivoLarguraFixaStep in job arquivoLarguraFixaJob
+java.lang.Exception: null
+	at br.com.wepdev.springbatch.writer.LeituraArquivoLarguraFixaWriterConfig.lambda$leituraArquivoLarguraFixaWriter$0(LeituraArquivoLarguraFixaWriterConfig.java:16) ~[classes/:?]
+	at org.springframework.batch.core.step.item.SimpleChunkProcessor.writeItems(SimpleChunkProcessor.java:193) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.step.item.SimpleChunkProcessor.doWrite(SimpleChunkProcessor.java:159) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.step.item.SimpleChunkProcessor.write(SimpleChunkProcessor.java:294) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.step.item.SimpleChunkProcessor.process(SimpleChunkProcessor.java:217) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.step.item.ChunkOrientedTasklet.execute(ChunkOrientedTasklet.java:77) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:407) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:331) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140) ~[spring-tx-5.3.15.jar:5.3.15]
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:273) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:82) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:258) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:208) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:152) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.job.AbstractJob.handleStep(AbstractJob.java:413) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.job.SimpleJob.doExecute(SimpleJob.java:136) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:320) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:149) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50) [spring-core-5.3.15.jar:5.3.15]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140) [spring-batch-core-4.3.4.jar:4.3.4]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) [spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) [spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) [spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) [spring-aop-5.3.15.jar:5.3.15]
+	at com.sun.proxy.$Proxy66.run(Unknown Source) [?:?]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.execute(JobLauncherApplicationRunner.java:199) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.executeLocalJobs(JobLauncherApplicationRunner.java:173) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.launchJobFromProperties(JobLauncherApplicationRunner.java:160) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:155) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:150) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:760) [spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:750) [spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:309) [spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) [spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) [spring-boot-2.6.3.jar:2.6.3]
+	at br.com.wepdev.springbatch.SpringbatchApplication.main(SpringbatchApplication.java:10) [classes/:?]
+2022-02-22 14:42:32,915 INFO o.s.b.c.s.AbstractStep [main] Step: [leituraArquivoLarguraFixaStep] executed in 84ms
+2022-02-22 14:42:32,929 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoLarguraFixaJob]] completed with the following parameters: [{arquivoClientes=file:files/clientes.txt}] and the following status: [FAILED] in 115ms
+2022-02-22 14:42:32,937 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-02-22 14:42:32,950 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-02-22 14:43:53,126 INFO b.c.w.s.SpringbatchApplication [main] Starting SpringbatchApplication using Java 11.0.9 on DESKTOP-C00EECN with PID 21976 (C:\Users\Waldir\IdeaProjects\demo\springbatch\target\classes started by Waldir in C:\Users\Waldir\IdeaProjects\demo\springbatch)
+2022-02-22 14:43:53,126 INFO b.c.w.s.SpringbatchApplication [main] No active profile set, falling back to default profiles: default
+2022-02-22 14:43:53,451 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2022-02-22 14:43:53,557 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2022-02-22 14:43:53,637 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-02-22 14:43:53,751 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2022-02-22 14:43:53,798 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2022-02-22 14:43:53,858 INFO b.c.w.s.SpringbatchApplication [main] Started SpringbatchApplication in 1.262 seconds (JVM running for 2.153)
+2022-02-22 14:43:53,947 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoLarguraFixaJob]] launched with the following parameters: [{arquivoClientes=file:files/clientes.txt}]
+2022-02-22 14:43:53,978 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [leituraArquivoLarguraFixaStep]
+2022-02-22 14:43:54,038 INFO o.s.b.c.s.AbstractStep [main] Step: [leituraArquivoLarguraFixaStep] executed in 60ms
+2022-02-22 14:43:54,056 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoLarguraFixaJob]] completed with the following parameters: [{arquivoClientes=file:files/clientes.txt}] and the following status: [COMPLETED] in 94ms
+2022-02-22 14:43:54,057 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-02-22 14:43:54,070 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-02-22 14:46:55,668 INFO b.c.w.s.SpringbatchApplication [main] Starting SpringbatchApplication using Java 11.0.9 on DESKTOP-C00EECN with PID 16540 (C:\Users\Waldir\IdeaProjects\demo\springbatch\target\classes started by Waldir in C:\Users\Waldir\IdeaProjects\demo\springbatch)
+2022-02-22 14:46:55,671 INFO b.c.w.s.SpringbatchApplication [main] No active profile set, falling back to default profiles: default
+2022-02-22 14:46:56,054 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2022-02-22 14:46:56,189 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2022-02-22 14:46:56,279 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-02-22 14:46:56,419 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2022-02-22 14:46:56,473 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2022-02-22 14:46:56,530 INFO b.c.w.s.SpringbatchApplication [main] Started SpringbatchApplication in 1.349 seconds (JVM running for 2.561)
+2022-02-22 14:46:56,592 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoLarguraFixaJob]] launched with the following parameters: [{arquivoClientes=file:files/clientes.txt}]
+2022-02-22 14:46:56,622 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [leituraArquivoLarguraFixaStep]
+2022-02-22 14:46:56,669 ERROR o.s.b.c.s.AbstractStep [main] Encountered an error executing step leituraArquivoLarguraFixaStep in job arquivoLarguraFixaJob
+java.lang.Exception: null
+	at br.com.wepdev.springbatch.writer.LeituraArquivoLarguraFixaWriterConfig.lambda$leituraArquivoLarguraFixaWriter$0(LeituraArquivoLarguraFixaWriterConfig.java:16) ~[classes/:?]
+	at org.springframework.batch.core.step.item.SimpleChunkProcessor.writeItems(SimpleChunkProcessor.java:193) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.step.item.SimpleChunkProcessor.doWrite(SimpleChunkProcessor.java:159) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.step.item.SimpleChunkProcessor.write(SimpleChunkProcessor.java:294) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.step.item.SimpleChunkProcessor.process(SimpleChunkProcessor.java:217) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.step.item.ChunkOrientedTasklet.execute(ChunkOrientedTasklet.java:77) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:407) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:331) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140) ~[spring-tx-5.3.15.jar:5.3.15]
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:273) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:82) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:258) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:208) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:152) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.job.AbstractJob.handleStep(AbstractJob.java:413) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.job.SimpleJob.doExecute(SimpleJob.java:136) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:320) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:149) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50) [spring-core-5.3.15.jar:5.3.15]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140) [spring-batch-core-4.3.4.jar:4.3.4]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) [spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) [spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) [spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) [spring-aop-5.3.15.jar:5.3.15]
+	at com.sun.proxy.$Proxy66.run(Unknown Source) [?:?]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.execute(JobLauncherApplicationRunner.java:199) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.executeLocalJobs(JobLauncherApplicationRunner.java:173) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.launchJobFromProperties(JobLauncherApplicationRunner.java:160) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:155) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:150) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:760) [spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:750) [spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:309) [spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) [spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) [spring-boot-2.6.3.jar:2.6.3]
+	at br.com.wepdev.springbatch.SpringbatchApplication.main(SpringbatchApplication.java:10) [classes/:?]
+2022-02-22 14:46:56,679 INFO o.s.b.c.s.AbstractStep [main] Step: [leituraArquivoLarguraFixaStep] executed in 57ms
+2022-02-22 14:46:56,691 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoLarguraFixaJob]] completed with the following parameters: [{arquivoClientes=file:files/clientes.txt}] and the following status: [FAILED] in 85ms
+2022-02-22 14:46:56,696 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-02-22 14:46:56,704 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-02-22 14:48:17,173 INFO b.c.w.s.SpringbatchApplication [main] Starting SpringbatchApplication using Java 11.0.9 on DESKTOP-C00EECN with PID 16664 (C:\Users\Waldir\IdeaProjects\demo\springbatch\target\classes started by Waldir in C:\Users\Waldir\IdeaProjects\demo\springbatch)
+2022-02-22 14:48:17,176 INFO b.c.w.s.SpringbatchApplication [main] No active profile set, falling back to default profiles: default
+2022-02-22 14:48:17,519 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2022-02-22 14:48:17,644 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2022-02-22 14:48:17,729 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-02-22 14:48:17,861 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2022-02-22 14:48:17,914 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2022-02-22 14:48:17,962 INFO b.c.w.s.SpringbatchApplication [main] Started SpringbatchApplication in 1.384 seconds (JVM running for 2.796)
+2022-02-22 14:48:18,025 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoLarguraFixaJob]] launched with the following parameters: [{arquivoClientes=file:files/clientes.txt}]
+2022-02-22 14:48:18,055 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [leituraArquivoLarguraFixaStep]
+2022-02-22 14:48:18,113 INFO o.s.b.c.s.AbstractStep [main] Step: [leituraArquivoLarguraFixaStep] executed in 58ms
+2022-02-22 14:48:18,126 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoLarguraFixaJob]] completed with the following parameters: [{arquivoClientes=file:files/clientes.txt}] and the following status: [COMPLETED] in 85ms
+2022-02-22 14:48:18,132 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-02-22 14:48:18,141 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-02-22 15:05:57,645 INFO b.c.w.s.SpringbatchApplication [main] Starting SpringbatchApplication using Java 11.0.9 on DESKTOP-C00EECN with PID 20692 (C:\Users\Waldir\IdeaProjects\demo\springbatch\target\classes started by Waldir in C:\Users\Waldir\IdeaProjects\demo\springbatch)
+2022-02-22 15:05:57,648 INFO b.c.w.s.SpringbatchApplication [main] No active profile set, falling back to default profiles: default
+2022-02-22 15:05:58,014 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2022-02-22 15:05:58,129 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2022-02-22 15:05:58,212 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-02-22 15:05:58,274 WARN o.s.c.a.AnnotationConfigApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'arquivoLarguraFixaJob' defined in class path resource [br/com/wepdev/springbatch/job/ArquivoLarguraFixaJobConfig.class]: Unsatisfied dependency expressed through method 'arquivoLarguraFixaJob' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'leituraArquivoDelimitadoStep' defined in class path resource [br/com/wepdev/springbatch/step/LeituraArquivoDelimitadoStepConfig.class]: Unsatisfied dependency expressed through method 'leituraArquivoDelimitadoStep' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'leituraArquivoDelimitadoReader' defined in class path resource [br/com/wepdev/springbatch/reader/LeituraArquivoDelimitadoReaderConfig.class]: Unsatisfied dependency expressed through method 'leituraArquivoDelimitadoReader' parameter 0; nested exception is org.springframework.beans.factory.BeanExpressionException: Expression parsing failed; nested exception is org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'jobParameters' cannot be found on object of type 'org.springframework.beans.factory.config.BeanExpressionContext' - maybe not public or not valid?
+2022-02-22 15:05:58,275 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown initiated...
+2022-02-22 15:05:58,281 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown completed.
+2022-02-22 15:06:38,311 INFO b.c.w.s.SpringbatchApplication [main] Starting SpringbatchApplication using Java 11.0.9 on DESKTOP-C00EECN with PID 22712 (C:\Users\Waldir\IdeaProjects\demo\springbatch\target\classes started by Waldir in C:\Users\Waldir\IdeaProjects\demo\springbatch)
+2022-02-22 15:06:38,311 INFO b.c.w.s.SpringbatchApplication [main] No active profile set, falling back to default profiles: default
+2022-02-22 15:06:38,627 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2022-02-22 15:06:38,736 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2022-02-22 15:06:38,808 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-02-22 15:06:38,878 WARN o.s.c.a.AnnotationConfigApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'arquivoLarguraFixaJob' defined in class path resource [br/com/wepdev/springbatch/job/ArquivoLarguraFixaJobConfig.class]: Unsatisfied dependency expressed through method 'arquivoLarguraFixaJob' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'leituraArquivoDelimitadoStep' defined in class path resource [br/com/wepdev/springbatch/step/LeituraArquivoDelimitadoStepConfig.class]: Unsatisfied dependency expressed through method 'leituraArquivoDelimitadoStep' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'leituraArquivoDelimitadoReader' defined in class path resource [br/com/wepdev/springbatch/reader/LeituraArquivoDelimitadoReaderConfig.class]: Unsatisfied dependency expressed through method 'leituraArquivoDelimitadoReader' parameter 0; nested exception is org.springframework.beans.factory.BeanExpressionException: Expression parsing failed; nested exception is org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'jobParameters' cannot be found on object of type 'org.springframework.beans.factory.config.BeanExpressionContext' - maybe not public or not valid?
+2022-02-22 15:06:38,878 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown initiated...
+2022-02-22 15:06:38,887 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown completed.
+2022-02-22 15:10:15,001 INFO b.c.w.s.SpringbatchApplication [main] Starting SpringbatchApplication using Java 11.0.9 on DESKTOP-C00EECN with PID 11180 (C:\Users\Waldir\IdeaProjects\demo\springbatch\target\classes started by Waldir in C:\Users\Waldir\IdeaProjects\demo\springbatch)
+2022-02-22 15:10:15,017 INFO b.c.w.s.SpringbatchApplication [main] No active profile set, falling back to default profiles: default
+2022-02-22 15:10:15,323 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2022-02-22 15:10:15,418 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2022-02-22 15:10:15,497 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-02-22 15:10:15,544 WARN o.s.c.a.AnnotationConfigApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'arquivoDelimitadoJob' defined in class path resource [br/com/wepdev/springbatch/job/ArquivoDelimitadoJobConfig.class]: Unsatisfied dependency expressed through method 'arquivoDelimitadoJob' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'leituraArquivoDelimitadoStep' defined in class path resource [br/com/wepdev/springbatch/step/LeituraArquivoDelimitadoStepConfig.class]: Unsatisfied dependency expressed through method 'leituraArquivoDelimitadoStep' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'leituraArquivoDelimitadoReader' defined in class path resource [br/com/wepdev/springbatch/reader/LeituraArquivoDelimitadoReaderConfig.class]: Unsatisfied dependency expressed through method 'leituraArquivoDelimitadoReader' parameter 0; nested exception is org.springframework.beans.factory.BeanExpressionException: Expression parsing failed; nested exception is org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'jobParameters' cannot be found on object of type 'org.springframework.beans.factory.config.BeanExpressionContext' - maybe not public or not valid?
+2022-02-22 15:10:15,544 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown initiated...
+2022-02-22 15:10:15,560 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown completed.
+2022-02-22 15:11:49,798 INFO b.c.w.s.SpringbatchApplication [main] Starting SpringbatchApplication using Java 11.0.9 on DESKTOP-C00EECN with PID 5896 (C:\Users\Waldir\IdeaProjects\demo\springbatch\target\classes started by Waldir in C:\Users\Waldir\IdeaProjects\demo\springbatch)
+2022-02-22 15:11:49,798 INFO b.c.w.s.SpringbatchApplication [main] No active profile set, falling back to default profiles: default
+2022-02-22 15:11:50,130 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2022-02-22 15:11:50,231 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2022-02-22 15:11:50,315 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-02-22 15:11:50,431 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2022-02-22 15:11:50,481 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2022-02-22 15:11:50,531 INFO b.c.w.s.SpringbatchApplication [main] Started SpringbatchApplication in 1.231 seconds (JVM running for 2.11)
+2022-02-22 15:11:50,627 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoDelimitadoJob]] launched with the following parameters: [{run.id=1, arquivoClientes=file:files/clientes.txt}]
+2022-02-22 15:11:50,644 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [leituraArquivoDelimitadoStep]
+2022-02-22 15:11:50,739 INFO o.s.b.c.s.AbstractStep [main] Step: [leituraArquivoDelimitadoStep] executed in 79ms
+2022-02-22 15:11:50,771 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoDelimitadoJob]] completed with the following parameters: [{run.id=1, arquivoClientes=file:files/clientes.txt}] and the following status: [COMPLETED] in 128ms
+2022-02-22 15:11:50,771 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-02-22 15:11:50,771 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
