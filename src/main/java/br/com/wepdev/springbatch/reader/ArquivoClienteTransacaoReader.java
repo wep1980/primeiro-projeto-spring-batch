@@ -3,20 +3,25 @@ package br.com.wepdev.springbatch.reader;
 import br.com.wepdev.springbatch.dominio.Cliente;
 import br.com.wepdev.springbatch.dominio.Transacao;
 import org.springframework.batch.item.*;
+import org.springframework.batch.item.file.FlatFileItemReader;
+import org.springframework.batch.item.file.ResourceAwareItemReaderItemStream;
+import org.springframework.core.io.Resource;
 
 /**
  * Classe de leitor customizado para inserir as transações no Cliente
  */
-public class ArquivoClienteTransacaoReader implements ItemStreamReader<Cliente> {
+public class ArquivoClienteTransacaoReader implements ItemStreamReader<Cliente>, ResourceAwareItemReaderItemStream<Cliente> {
 
     private Object objetoAtual; // Objeto que guarda o registro atual que esta sendo verificado
-    private ItemStreamReader<Object> delegate;
+
+    //private ItemStreamReader<Object> delegate;
+    private FlatFileItemReader<Object> delegate;
 
     /**
      * Construtor que inicializa o delegate
      * @param delegate
      */
-    public ArquivoClienteTransacaoReader(ItemStreamReader<Object> delegate) {
+    public ArquivoClienteTransacaoReader(FlatFileItemReader<Object> delegate) {
         this.delegate = delegate;
     }
 
@@ -59,5 +64,10 @@ public class ArquivoClienteTransacaoReader implements ItemStreamReader<Cliente> 
     public void close() throws ItemStreamException {
         delegate.close();
 
+    }
+
+    @Override
+    public void setResource(Resource resource) {
+        delegate.setResource(resource);
     }
 }
