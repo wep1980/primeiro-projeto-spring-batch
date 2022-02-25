@@ -811,3 +811,21 @@ Caused by: java.lang.IllegalStateException: Could not find a matching pattern fo
 2022-02-25 15:43:57,713 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-2 - Shutdown completed.
 2022-02-25 15:43:57,713 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
 2022-02-25 15:43:57,729 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-02-25 16:14:18,275 INFO b.c.w.s.SpringbatchApplication [main] Starting SpringbatchApplication using Java 11.0.9 on DESKTOP-C00EECN with PID 11796 (C:\Users\Waldir\IdeaProjects\demo\springbatch\target\classes started by Waldir in C:\Users\Waldir\IdeaProjects\demo\springbatch)
+2022-02-25 16:14:18,278 INFO b.c.w.s.SpringbatchApplication [main] No active profile set, falling back to default profiles: default
+2022-02-25 16:14:18,618 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2022-02-25 16:14:18,727 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2022-02-25 16:14:18,806 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-02-25 16:14:18,871 INFO c.z.h.HikariDataSource [main] HikariPool-2 - Starting...
+2022-02-25 16:14:18,876 INFO c.z.h.HikariDataSource [main] HikariPool-2 - Start completed.
+2022-02-25 16:14:18,955 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2022-02-25 16:14:19,007 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2022-02-25 16:14:19,059 INFO b.c.w.s.SpringbatchApplication [main] Started SpringbatchApplication in 1.307 seconds (JVM running for 2.614)
+2022-02-25 16:14:19,122 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=jdbcPagingReaderJob]] launched with the following parameters: [{arquivosClientes=file:files/clientes*, run.id=1}]
+2022-02-25 16:14:19,150 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [jdbcPagingReaderStep]
+2022-02-25 16:14:19,236 INFO o.s.b.c.s.AbstractStep [main] Step: [jdbcPagingReaderStep] executed in 86ms
+2022-02-25 16:14:19,248 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=jdbcPagingReaderJob]] completed with the following parameters: [{arquivosClientes=file:files/clientes*, run.id=1}] and the following status: [COMPLETED] in 112ms
+2022-02-25 16:14:19,253 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-2 - Shutdown initiated...
+2022-02-25 16:14:19,260 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-2 - Shutdown completed.
+2022-02-25 16:14:19,261 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-02-25 16:14:19,264 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.

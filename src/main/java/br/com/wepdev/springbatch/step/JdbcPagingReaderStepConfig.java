@@ -11,17 +11,17 @@ import org.springframework.context.annotation.Configuration;
 
 
 @Configuration
-public class JdbcCursorReaderStepConfig {
+public class JdbcPagingReaderStepConfig {
 	@Autowired
-	public StepBuilderFactory stepBuilderFactory;
+	private StepBuilderFactory stepBuilderFactory;
 	
-//	@Bean
-//	public Step jdbcCursorReaderStep(ItemReader<Cliente> jdbcCursorReader, ItemWriter<Cliente> jdbcCursorWriter) {
-//		return stepBuilderFactory
-//				.get("jdbcCursorReaderStep")
-//				.<Cliente, Cliente>chunk(1)
-//				.reader(jdbcCursorReader)
-//				.writer(jdbcCursorWriter)
-//				.build();
-//	}
+	@Bean
+	public Step jdbcPagingReaderStep(ItemReader<Cliente> jdbcPagingReader, ItemWriter<Cliente> jdbcPagingWriter) {
+		return stepBuilderFactory
+				.get("jdbcPagingReaderStep")
+				.<Cliente, Cliente>chunk(1)
+				.reader(jdbcPagingReader)
+				.writer(jdbcPagingWriter)
+				.build();
+	}
 }
