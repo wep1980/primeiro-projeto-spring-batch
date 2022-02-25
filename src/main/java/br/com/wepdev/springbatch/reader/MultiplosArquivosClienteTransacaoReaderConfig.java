@@ -17,14 +17,14 @@ public class MultiplosArquivosClienteTransacaoReaderConfig {
      * Metodo que le os dados de varios arquivos
      * @return
      */
-    @StepScope
-    @Bean
-    public MultiResourceItemReader multiplosArquivosClienteTransacaoReader(@Value("#{jobParameters['arquivosClientes']}") Resource[] arquivosClientes, FlatFileItemReader leituraArquivoMultiplosFormatosReader){
-        return new MultiResourceItemReaderBuilder<>()
-                .name("multiplosArquivosClienteTransacaoReader")
-                .resources(arquivosClientes)
-                .delegate(new ArquivoClienteTransacaoReader(leituraArquivoMultiplosFormatosReader))
-                .build();
-
-    }
+//    @StepScope
+//    @Bean
+//    public MultiResourceItemReader multiplosArquivosClienteTransacaoReader(@Value("#{jobParameters['arquivosClientes']}") Resource[] arquivosClientes, FlatFileItemReader leituraArquivoMultiplosFormatosReader){
+//        return new MultiResourceItemReaderBuilder<>()
+//                .name("multiplosArquivosClienteTransacaoReader")
+//                .resources(arquivosClientes)
+//                .delegate(new ArquivoClienteTransacaoReader(leituraArquivoMultiplosFormatosReader))
+//                .build();
+//
+//    }
 }
