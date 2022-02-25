@@ -8,9 +8,9 @@ import org.springframework.context.annotation.Configuration;
 public class LeituraArquivoMultiplosFormatosWriterConfig {
 
 
-	@SuppressWarnings({ "rawtypes", "unchecked" })
-	@Bean
-	public ItemWriter leituraArquivoDelimitadoWriter() {
-		return items -> items.forEach(System.out::println);
-	}
+//	@SuppressWarnings({ "rawtypes", "unchecked" })
+//	@Bean
+//	public ItemWriter leituraArquivoDelimitadoWriter() {
+//		return items -> items.forEach(System.out::println);
+//	}
 }

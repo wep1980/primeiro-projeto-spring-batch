@@ -17,13 +17,13 @@ public class LeituraArquivoMultiplosFormatosStepConfig {
 	@Autowired
 	public StepBuilderFactory stepBuilderFactory;
 
-	@Bean
-	public Step leituraArquivoMultiplosFormatosStep(MultiResourceItemReader<Cliente> multiplosArquivosClienteTransacaoReader, ItemWriter leituraArquivoMultiplosFormatosItemWriter) {
-		return stepBuilderFactory
-				.get("leituraArquivoMultiplosFormatosStep")
-				.chunk(1)
-				.reader(multiplosArquivosClienteTransacaoReader) // Chamando a classe de leitura de arquivos customizada que le as transacoes de clientes, caso exista
-				.writer(leituraArquivoMultiplosFormatosItemWriter)
-				.build();
-	}
+//	@Bean
+//	public Step leituraArquivoMultiplosFormatosStep(MultiResourceItemReader<Cliente> multiplosArquivosClienteTransacaoReader, ItemWriter leituraArquivoMultiplosFormatosItemWriter) {
+//		return stepBuilderFactory
+//				.get("leituraArquivoMultiplosFormatosStep")
+//				.chunk(1)
+//				.reader(multiplosArquivosClienteTransacaoReader) // Chamando a classe de leitura de arquivos customizada que le as transacoes de clientes, caso exista
+//				.writer(leituraArquivoMultiplosFormatosItemWriter)
+//				.build();
+//	}
 }

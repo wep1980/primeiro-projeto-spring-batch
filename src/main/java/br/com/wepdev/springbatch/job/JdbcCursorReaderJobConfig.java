@@ -1,4 +1,3 @@
-
 package br.com.wepdev.springbatch.job;
 
 import org.springframework.batch.core.Job;
@@ -12,16 +11,16 @@ import org.springframework.context.annotation.Configuration;
 
 @EnableBatchProcessing
 @Configuration
-public class ArquivoMultiplosFormatosJobConfig {
-    @Autowired
-    public JobBuilderFactory jobBuilderFactory;
-
-//    @Bean
-//    public Job arquivoMultiplosFormatosJob(Step leituraArquivoMultiplosFormatosStep) {
-//        return jobBuilderFactory
-//                .get("arquivoMultiplosFormatosJob")
-//                .start(leituraArquivoMultiplosFormatosStep)
-//                .incrementer(new RunIdIncrementer())
-//                .build();
-//    }
+public class JdbcCursorReaderJobConfig {
+	@Autowired
+	public JobBuilderFactory jobBuilderFactory;
+	
+	@Bean
+	public Job jdbcCursorReaderJob(Step jdbcCursorReaderStep) {
+		return jobBuilderFactory
+				.get("jdbcCursorReaderJob")
+				.start(jdbcCursorReaderStep)
+				.incrementer(new RunIdIncrementer())
+				.build();
+	}
 }

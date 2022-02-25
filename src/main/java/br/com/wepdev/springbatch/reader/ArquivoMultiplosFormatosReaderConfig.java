@@ -18,15 +18,15 @@ public class ArquivoMultiplosFormatosReaderConfig {
 	 * @param lineMapper
 	 * @return
 	 */
-	@StepScope
-	@Bean
-	public FlatFileItemReader arquivoMultiplosFormatosItemReader(@Value("#{jobParameters['arquivoClientes']}")Resource arquivoClientes, LineMapper lineMapper) {
-
-		return new FlatFileItemReaderBuilder()
-				.name("arquivoMultiplosFormatosItemReader")
-				.resource(arquivoClientes)
-				.lineMapper(lineMapper)
-				.build();
-	}
+//	@StepScope
+//	@Bean
+//	public FlatFileItemReader arquivoMultiplosFormatosItemReader(@Value("#{jobParameters['arquivoClientes']}")Resource arquivoClientes, LineMapper lineMapper) {
+//
+//		return new FlatFileItemReaderBuilder()
+//				.name("arquivoMultiplosFormatosItemReader")
+//				.resource(arquivoClientes)
+//				.lineMapper(lineMapper)
+//				.build();
+//	}
 
 }
