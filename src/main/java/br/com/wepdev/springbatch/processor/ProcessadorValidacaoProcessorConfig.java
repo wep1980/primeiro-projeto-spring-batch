@@ -2,6 +2,8 @@ package br.com.wepdev.springbatch.processor;
 
 import br.com.wepdev.springbatch.dominio.Cliente;
 import org.springframework.batch.item.ItemProcessor;
+import org.springframework.batch.item.support.CompositeItemProcessor;
+import org.springframework.batch.item.support.builder.CompositeItemProcessorBuilder;
 import org.springframework.batch.item.validator.BeanValidatingItemProcessor;
 import org.springframework.batch.item.validator.ValidatingItemProcessor;
 import org.springframework.batch.item.validator.ValidationException;
@@ -23,9 +25,30 @@ public class ProcessadorValidacaoProcessorConfig {
 	 * @return
 	 */
 	@Bean
-	public ItemProcessor<Cliente, Cliente> procesadorValidacaoProcessor() {
-//		BeanValidatingItemProcessor<Cliente> processor = new BeanValidatingItemProcessor<>();
-//		processor.setFilter(true); // Filtra os itens invalidos para nao impedir a execucao do batch
+	public ItemProcessor<Cliente, Cliente> procesadorValidacaoProcessor() throws Exception {
+        return new CompositeItemProcessorBuilder<Cliente, Cliente>() // Processador composto, Recebe Cliente e devolve Cliente
+				.delegates(beanValidatingprocessor(), emailValidatingProcessor()) // esse delegates recebe um vetor de validadores, nesse caso esta fazendo 2 validações
+				.build();
+	}
+
+	/**
+	 * Metodo validador dos Bean Validators, sao os validadores das anotações que estao nos campos da Classe Cliente.
+	 *
+	 * OBS : Ao colocar esse metodo de validacao em um processamento composto o ciclo de vida dele e menor, então é necessario utilizar o afterPropertiesSet()
+	 * @return
+	 */
+	private BeanValidatingItemProcessor<Cliente> beanValidatingprocessor() throws Exception {
+		BeanValidatingItemProcessor<Cliente> processor = new BeanValidatingItemProcessor<>();
+		processor.setFilter(true); // Filtra os itens invalidos para nao impedir a execucao do batch
+		processor.afterPropertiesSet();
+		return processor;
+	}
+
+	/**
+	 * Metodo que valida se existe emails duplicados
+	 * @return
+	 */
+	private ValidatingItemProcessor<Cliente> emailValidatingProcessor(){
 		ValidatingItemProcessor<Cliente> processor = new ValidatingItemProcessor<>(); // Configuração para validacao mais robusta
 		processor.setValidator(validador());
 		processor.setFilter(true); // Filtra os itens invalidos para nao impedir a execucao do batch
