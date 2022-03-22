@@ -11,19 +11,20 @@ import org.springframework.context.annotation.Configuration;
 
 
 @Configuration
-public class JdbcPagingReaderStepConfig {
-
-
+public class SkipExceptionStepConfig {
 	@Autowired
 	private StepBuilderFactory stepBuilderFactory;
 	
 	@Bean
-	public Step jdbcPagingReaderStep(ItemReader<Cliente> jdbcPagingReader, ItemWriter<Cliente> jdbcPagingWriter) {
+	public Step skipExceptionStep(ItemReader<Cliente> skipExceptionReader, ItemWriter<Cliente> skipExceptionWriter) {
 		return stepBuilderFactory
-				.get("jdbcPagingReaderStep")
-				.<Cliente, Cliente>chunk(1)
-				.reader(jdbcPagingReader)
-				.writer(jdbcPagingWriter)
+				.get("skipExceptionStep")
+				.<Cliente, Cliente>chunk(11)
+				.reader(skipExceptionReader)
+				.writer(skipExceptionWriter)
+				.faultTolerant()// Deixando tolerante a falhas
+				.skip(Exception.class) // Informando a exeception que sera tolerada
+				.skipLimit(2)// Somente 2 registros invalidos serao tolerados
 				.build();
 	}
 }

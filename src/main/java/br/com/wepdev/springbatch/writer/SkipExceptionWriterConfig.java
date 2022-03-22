@@ -7,11 +7,9 @@ import org.springframework.context.annotation.Configuration;
 
 
 @Configuration
-public class JdbcPagingReaderWriterConfig {
-
-
+public class SkipExceptionWriterConfig {
 	@Bean
-	public ItemWriter<Cliente> jdbcPagingWriter() {
+	public ItemWriter<Cliente> printWriter() {
 		return clientes -> clientes.forEach(System.out::println);
 	}
 }

@@ -11,18 +11,15 @@ import org.springframework.context.annotation.Configuration;
 
 @EnableBatchProcessing
 @Configuration
-public class JdbcPagingReaderJobConfig {
-
-
+public class SkipExceptionJobConfig {
 	@Autowired
 	private JobBuilderFactory jobBuilderFactory;
-
 	
 	@Bean
-	public Job jdbcPagingReaderJob(Step jdbcPagingReaderStep) {
+	public Job skipExceptionJob(Step skipExceptionStep) {
 		return jobBuilderFactory
-				.get("jdbcPagingReaderJob")
-				.start(jdbcPagingReaderStep)
+				.get("skipExceptionJob")
+				.start(skipExceptionStep)
 				.incrementer(new RunIdIncrementer())
 				.build();
 	}
