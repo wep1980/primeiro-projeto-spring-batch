@@ -7,11 +7,11 @@ import org.springframework.context.annotation.Configuration;
 
 
 @Configuration
-public class JdbcCursorWriterConfig {
+public class JdbcPagingReaderWriterConfig {
 
 
 	@Bean
-	public ItemWriter<Cliente> jdbcCursorWriter() {
+	public ItemWriter<Cliente> jdbcPagingWriter() {
 		return clientes -> clientes.forEach(System.out::println);
 	}
 }
