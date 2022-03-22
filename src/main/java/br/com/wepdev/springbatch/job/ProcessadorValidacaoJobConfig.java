@@ -11,15 +11,15 @@ import org.springframework.context.annotation.Configuration;
 
 @EnableBatchProcessing
 @Configuration
-public class SkipExceptionJobConfig {
+public class ProcessadorValidacaoJobConfig {
 	@Autowired
 	private JobBuilderFactory jobBuilderFactory;
 	
 	@Bean
-	public Job skipExceptionJob(Step skipExceptionStep) {
+	public Job processadorValidacaoJob(Step processadorValidacaoStep) {
 		return jobBuilderFactory
-				.get("skipExceptionJob")
-				.start(skipExceptionStep)
+				.get("processadorValidacaoJob")
+				.start(processadorValidacaoStep)
 				.incrementer(new RunIdIncrementer())
 				.build();
 	}

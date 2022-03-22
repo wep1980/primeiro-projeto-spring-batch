@@ -1,9 +1,25 @@
 package br.com.wepdev.springbatch.dominio;
 
+import org.hibernate.validator.constraints.Range;
+
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
 public class Cliente {
+
+	@NotNull
+	@Size(min = 1, max = 100)
+	@Pattern(regexp = "[a-zA-Z\\s]+", message = "Nome deve ser alfabético") // Valida se o nome esta formado por letras e se possui alguem espaço, e considerado valido
 	private String nome;
-	private String sobrenome;
-	private String idade;
+
+	@NotNull
+	@Range(min = 18, max = 200) // Faixa de idade permitida
+	private Integer idade;
+
+	@NotNull
+	@Size(min = 1, max = 50)
+	@Pattern(regexp = "^[A-za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$", message = "Email inválido") // Tipo valido
 	private String email;
 
 
@@ -15,19 +31,11 @@ public class Cliente {
 		this.nome = nome;
 	}
 
-	public String getSobrenome() {
-		return sobrenome;
-	}
-
-	public void setSobrenome(String sobrenome) {
-		this.sobrenome = sobrenome;
-	}
-
-	public String getIdade() {
+	public Integer getIdade() {
 		return idade;
 	}
 
-	public void setIdade(String idade) {
+	public void setIdade(Integer idade) {
 		this.idade = idade;
 	}
 
@@ -43,7 +51,6 @@ public class Cliente {
 	public String toString() {
 		return "Cliente{" +
 	                "nome='" + nome + "'" +
-	                ", sobrenome ='" + sobrenome + "'" +
 	                ", idade='" + idade + "'" +
 	                ", email='" + email + "'" +
 				    '}';
