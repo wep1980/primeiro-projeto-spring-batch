@@ -11,21 +11,21 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class ProcessadorValidacaoStepConfig {
-
+public class ProcessadorScriptStepConfig {
 	@Autowired
-	public StepBuilderFactory stepBuilderFactory;
+	private StepBuilderFactory stepBuilderFactory;
 	
 	@Bean
-	public Step processadorValidacaoStep(ItemReader<Cliente> processadorValidacaoReader, ItemProcessor<Cliente, Cliente> processadorValidacaoProcessor,
-			ItemWriter<Cliente> processadorValidacaoWriter) {
-
+	public Step processadorScriptStep(
+			ItemReader<Cliente> processadorScriptReader,
+			ItemProcessor<Cliente, Cliente> processadorScriptProcessor,
+			ItemWriter<Cliente> processadorScriptWriter) {
 		return stepBuilderFactory
-				.get("processadorValidacaoStep")
+				.get("processadorScriptStep")
 				.<Cliente, Cliente>chunk(1)
-				.reader(processadorValidacaoReader)
-				.processor(processadorValidacaoProcessor)
-				.writer(processadorValidacaoWriter)
+				.reader(processadorScriptReader)
+				.processor(processadorScriptProcessor)
+				.writer(processadorScriptWriter)
 				.build();
 	}
 }

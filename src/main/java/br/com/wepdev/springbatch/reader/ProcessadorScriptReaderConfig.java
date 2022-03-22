@@ -10,13 +10,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 
 @Configuration
-public class ProcessadorValidacaoReaderConfig {
+public class ProcessadorScriptReaderConfig {
 	@StepScope
 	@Bean
-	public FlatFileItemReader<Cliente> processadorValidacaoReader(
+	public FlatFileItemReader<Cliente> processadorScriptReader(
 			@Value("#{jobParameters['arquivoClientes']}") Resource arquivoClientes) {
 		return new FlatFileItemReaderBuilder<Cliente>()
-				.name("processadorValidacaoReader")
+				.name("processadorScriptReader")
 				.resource(arquivoClientes)
 				.delimited()
 				.names("nome", "idade", "email")

@@ -5,10 +5,11 @@ import org.springframework.batch.item.ItemWriter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+
 @Configuration
-public class ProcessadorValidacaoWriterConfig {
+public class ProcessadorScriptWriterConfig {
 	@Bean
-	public ItemWriter<Cliente> processadorValidacaoWriter() {
+	public ItemWriter<Cliente> processadorScriptWriter() {
 		return clientes -> clientes.forEach(System.out::println);
 	}
 }

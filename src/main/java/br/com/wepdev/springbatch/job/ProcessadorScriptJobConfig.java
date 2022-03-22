@@ -9,17 +9,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@EnableBatchProcessing
 @Configuration
-public class ProcessadorValidacaoJobConfig {
+@EnableBatchProcessing
+public class ProcessadorScriptJobConfig {
 	@Autowired
 	private JobBuilderFactory jobBuilderFactory;
 	
 	@Bean
-	public Job processadorValidacaoJob(Step processadorValidacaoStep) {
+	public Job processadorScriptJob(Step processadorScriptStep) {
 		return jobBuilderFactory
-				.get("processadorValidacaoJob")
-				.start(processadorValidacaoStep)
+				.get("processadorScriptJob")
+				.start(processadorScriptStep)
 				.incrementer(new RunIdIncrementer())
 				.build();
 	}
