@@ -12,7 +12,10 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 
 import javax.sql.DataSource;
 
-
+/**
+ * A diferença entre uma consulta por Cursor e uma Paginada e que o cursor salva os resultados em memoria, se o resultado for muito grande,
+ * a memoria pode ser estourada
+ */
 @Configuration
 public class JdbcPagingReaderReaderConfig {
 
