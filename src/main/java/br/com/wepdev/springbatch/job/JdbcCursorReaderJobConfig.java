@@ -12,15 +12,16 @@ import org.springframework.context.annotation.Configuration;
 @EnableBatchProcessing
 @Configuration
 public class JdbcCursorReaderJobConfig {
+
 	@Autowired
 	public JobBuilderFactory jobBuilderFactory;
 	
-//	@Bean
-//	public Job jdbcCursorReaderJob(Step jdbcCursorReaderStep) {
-//		return jobBuilderFactory
-//				.get("jdbcCursorReaderJob")
-//				.start(jdbcCursorReaderStep)
-//				.incrementer(new RunIdIncrementer())
-//				.build();
-//	}
+	@Bean
+	public Job jdbcCursorReaderJob(Step jdbcCursorReaderStep) {
+		return jobBuilderFactory
+				.get("jdbcCursorReaderJob")
+				.start(jdbcCursorReaderStep)
+				.incrementer(new RunIdIncrementer())
+				.build();
+	}
 }

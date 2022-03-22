@@ -10,8 +10,8 @@ import org.springframework.context.annotation.Configuration;
 public class JdbcCursorWriterConfig {
 
 
-//	@Bean
-//	public ItemWriter<Cliente> jdbcCursorWriter() {
-//		return clientes -> clientes.forEach(System.out::println);
-//	}
+	@Bean
+	public ItemWriter<Cliente> jdbcCursorWriter() {
+		return clientes -> clientes.forEach(System.out::println);
+	}
 }

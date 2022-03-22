@@ -923,3 +923,214 @@ Caused by: java.sql.SQLException: Encerrando a execução - Cliente invalido ju@
 2022-02-25 16:52:18,845 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-2 - Shutdown completed.
 2022-02-25 16:52:18,845 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
 2022-02-25 16:52:18,848 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-03-15 08:32:10,987 INFO b.c.w.s.SpringbatchApplication [main] Starting SpringbatchApplication using Java 11.0.9 on DESKTOP-C00EECN with PID 13408 (C:\Users\Waldir\IdeaProjects\demo\springbatch\target\classes started by Waldir in C:\Users\Waldir\IdeaProjects\demo\springbatch)
+2022-03-15 08:32:10,993 INFO b.c.w.s.SpringbatchApplication [main] No active profile set, falling back to default profiles: default
+2022-03-15 08:32:11,477 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2022-03-15 08:32:11,611 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2022-03-15 08:32:11,748 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-03-15 08:32:12,012 INFO c.z.h.HikariDataSource [main] HikariPool-2 - Starting...
+2022-03-15 08:32:12,028 INFO c.z.h.HikariDataSource [main] HikariPool-2 - Start completed.
+2022-03-15 08:32:12,036 WARN o.s.c.a.AnnotationConfigApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'skipExceptionStep' defined in class path resource [br/com/wepdev/springbatch/step/SkipExceptionStepConfig.class]: Unsatisfied dependency expressed through method 'skipExceptionStep' parameter 1; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'org.springframework.batch.item.ItemWriter<br.com.wepdev.springbatch.dominio.Cliente>' available: expected single matching bean but found 2: jdbcPagingWriter,processadorValidacaoWriter
+2022-03-15 08:32:12,036 INFO c.z.h.HikariDataSource [main] HikariPool-2 - Shutdown initiated...
+2022-03-15 08:32:12,036 INFO c.z.h.HikariDataSource [main] HikariPool-2 - Shutdown completed.
+2022-03-15 08:32:12,036 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown initiated...
+2022-03-15 08:32:12,053 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown completed.
+2022-03-15 08:33:14,839 INFO b.c.w.s.SpringbatchApplication [main] Starting SpringbatchApplication using Java 11.0.9 on DESKTOP-C00EECN with PID 17124 (C:\Users\Waldir\IdeaProjects\demo\springbatch\target\classes started by Waldir in C:\Users\Waldir\IdeaProjects\demo\springbatch)
+2022-03-15 08:33:14,839 INFO b.c.w.s.SpringbatchApplication [main] No active profile set, falling back to default profiles: default
+2022-03-15 08:33:15,212 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2022-03-15 08:33:15,321 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2022-03-15 08:33:15,399 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-03-15 08:33:15,495 INFO c.z.h.HikariDataSource [main] HikariPool-2 - Starting...
+2022-03-15 08:33:15,511 INFO c.z.h.HikariDataSource [main] HikariPool-2 - Start completed.
+2022-03-15 08:33:15,557 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2022-03-15 08:33:15,623 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2022-03-15 08:33:15,670 INFO b.c.w.s.SpringbatchApplication [main] Started SpringbatchApplication in 1.379 seconds (JVM running for 2.33)
+2022-03-15 08:33:15,782 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=processadorValidacaoJob]] launched with the following parameters: [{arquivosClientes=file:files/clientes.txt, run.id=1}]
+2022-03-15 08:33:15,829 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [processadorValidacaoStep]
+2022-03-15 08:33:15,860 ERROR o.s.b.c.s.AbstractStep [main] Encountered an error executing step processadorValidacaoStep in job processadorValidacaoJob
+org.springframework.batch.item.ItemStreamException: Failed to initialize the reader
+	at org.springframework.batch.item.support.AbstractItemCountingItemStreamItemReader.open(AbstractItemCountingItemStreamItemReader.java:153) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	at org.springframework.batch.item.support.AbstractItemCountingItemStreamItemReader$$FastClassBySpringCGLIB$$ebb633d0.invoke(<generated>) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783) ~[spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:137) ~[spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:124) ~[spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698) ~[spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.batch.item.file.FlatFileItemReader$$EnhancerBySpringCGLIB$$3d5bb290.open(<generated>) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	at org.springframework.batch.item.support.CompositeItemStream.open(CompositeItemStream.java:104) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.step.tasklet.TaskletStep.open(TaskletStep.java:311) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:205) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:152) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.job.AbstractJob.handleStep(AbstractJob.java:413) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.job.SimpleJob.doExecute(SimpleJob.java:136) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:320) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:149) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50) [spring-core-5.3.15.jar:5.3.15]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140) [spring-batch-core-4.3.4.jar:4.3.4]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) [spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) [spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) [spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) [spring-aop-5.3.15.jar:5.3.15]
+	at com.sun.proxy.$Proxy67.run(Unknown Source) [?:?]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.execute(JobLauncherApplicationRunner.java:199) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.executeLocalJobs(JobLauncherApplicationRunner.java:173) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.launchJobFromProperties(JobLauncherApplicationRunner.java:160) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:155) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:150) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:760) [spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:750) [spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:309) [spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) [spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) [spring-boot-2.6.3.jar:2.6.3]
+	at br.com.wepdev.springbatch.SpringbatchApplication.main(SpringbatchApplication.java:10) [classes/:?]
+Caused by: java.lang.IllegalArgumentException: Input resource must be set
+	at org.springframework.util.Assert.notNull(Assert.java:201) ~[spring-core-5.3.15.jar:5.3.15]
+	at org.springframework.batch.item.file.FlatFileItemReader.doOpen(FlatFileItemReader.java:251) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	at org.springframework.batch.item.support.AbstractItemCountingItemStreamItemReader.open(AbstractItemCountingItemStreamItemReader.java:150) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	... 43 more
+2022-03-15 08:33:15,876 INFO o.s.b.c.s.AbstractStep [main] Step: [processadorValidacaoStep] executed in 47ms
+2022-03-15 08:33:15,892 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=processadorValidacaoJob]] completed with the following parameters: [{arquivosClientes=file:files/clientes.txt, run.id=1}] and the following status: [FAILED] in 94ms
+2022-03-15 08:33:15,892 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-2 - Shutdown initiated...
+2022-03-15 08:33:15,907 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-2 - Shutdown completed.
+2022-03-15 08:33:15,907 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-03-15 08:33:15,907 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-03-15 08:35:56,031 INFO b.c.w.s.SpringbatchApplication [main] Starting SpringbatchApplication using Java 11.0.9 on DESKTOP-C00EECN with PID 10244 (C:\Users\Waldir\IdeaProjects\demo\springbatch\target\classes started by Waldir in C:\Users\Waldir\IdeaProjects\demo\springbatch)
+2022-03-15 08:35:56,031 INFO b.c.w.s.SpringbatchApplication [main] No active profile set, falling back to default profiles: default
+2022-03-15 08:35:56,458 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2022-03-15 08:35:56,585 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2022-03-15 08:35:56,679 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-03-15 08:35:56,841 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2022-03-15 08:35:56,887 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2022-03-15 08:35:56,950 INFO b.c.w.s.SpringbatchApplication [main] Started SpringbatchApplication in 1.47 seconds (JVM running for 2.493)
+2022-03-15 08:35:57,029 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=processadorValidacaoJob]] launched with the following parameters: [{arquivosClientes=file:files/clientes.txt, run.id=2}]
+2022-03-15 08:35:57,060 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [processadorValidacaoStep]
+2022-03-15 08:35:57,091 ERROR o.s.b.c.s.AbstractStep [main] Encountered an error executing step processadorValidacaoStep in job processadorValidacaoJob
+org.springframework.batch.item.ItemStreamException: Failed to initialize the reader
+	at org.springframework.batch.item.support.AbstractItemCountingItemStreamItemReader.open(AbstractItemCountingItemStreamItemReader.java:153) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	at org.springframework.batch.item.support.AbstractItemCountingItemStreamItemReader$$FastClassBySpringCGLIB$$ebb633d0.invoke(<generated>) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783) ~[spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:137) ~[spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:124) ~[spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698) ~[spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.batch.item.file.FlatFileItemReader$$EnhancerBySpringCGLIB$$44362400.open(<generated>) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	at org.springframework.batch.item.support.CompositeItemStream.open(CompositeItemStream.java:104) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.step.tasklet.TaskletStep.open(TaskletStep.java:311) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:205) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:152) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.job.AbstractJob.handleStep(AbstractJob.java:413) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.job.SimpleJob.doExecute(SimpleJob.java:136) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:320) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:149) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50) [spring-core-5.3.15.jar:5.3.15]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140) [spring-batch-core-4.3.4.jar:4.3.4]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) [spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) [spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) [spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) [spring-aop-5.3.15.jar:5.3.15]
+	at com.sun.proxy.$Proxy67.run(Unknown Source) [?:?]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.execute(JobLauncherApplicationRunner.java:199) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.executeLocalJobs(JobLauncherApplicationRunner.java:173) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.launchJobFromProperties(JobLauncherApplicationRunner.java:160) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:155) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:150) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:760) [spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:750) [spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:309) [spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) [spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) [spring-boot-2.6.3.jar:2.6.3]
+	at br.com.wepdev.springbatch.SpringbatchApplication.main(SpringbatchApplication.java:10) [classes/:?]
+Caused by: java.lang.IllegalArgumentException: Input resource must be set
+	at org.springframework.util.Assert.notNull(Assert.java:201) ~[spring-core-5.3.15.jar:5.3.15]
+	at org.springframework.batch.item.file.FlatFileItemReader.doOpen(FlatFileItemReader.java:251) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	at org.springframework.batch.item.support.AbstractItemCountingItemStreamItemReader.open(AbstractItemCountingItemStreamItemReader.java:150) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	... 43 more
+2022-03-15 08:35:57,107 INFO o.s.b.c.s.AbstractStep [main] Step: [processadorValidacaoStep] executed in 47ms
+2022-03-15 08:35:57,123 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=processadorValidacaoJob]] completed with the following parameters: [{arquivosClientes=file:files/clientes.txt, run.id=2}] and the following status: [FAILED] in 63ms
+2022-03-15 08:35:57,123 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-03-15 08:35:57,139 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-03-22 16:44:31,749 INFO b.c.w.s.SpringbatchApplication [main] Starting SpringbatchApplication using Java 11.0.9 on DESKTOP-C00EECN with PID 14544 (C:\Users\Waldir\IdeaProjects\demo\springbatch\target\classes started by Waldir in C:\Users\Waldir\IdeaProjects\demo\springbatch)
+2022-03-22 16:44:31,752 INFO b.c.w.s.SpringbatchApplication [main] No active profile set, falling back to default profiles: default
+2022-03-22 16:44:32,324 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2022-03-22 16:44:32,522 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2022-03-22 16:44:32,682 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-03-22 16:44:32,869 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2022-03-22 16:44:32,929 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2022-03-22 16:44:32,987 INFO b.c.w.s.SpringbatchApplication [main] Started SpringbatchApplication in 1.865 seconds (JVM running for 2.98)
+2022-03-22 16:44:33,076 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=processadorValidacaoJob]] launched with the following parameters: [{arquivosClientes=file:files/clientes.txt, run.id=1}]
+2022-03-22 16:44:33,132 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [processadorValidacaoStep]
+2022-03-22 16:44:33,170 ERROR o.s.b.c.s.AbstractStep [main] Encountered an error executing step processadorValidacaoStep in job processadorValidacaoJob
+org.springframework.batch.item.ItemStreamException: Failed to initialize the reader
+	at org.springframework.batch.item.support.AbstractItemCountingItemStreamItemReader.open(AbstractItemCountingItemStreamItemReader.java:153) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	at org.springframework.batch.item.support.AbstractItemCountingItemStreamItemReader$$FastClassBySpringCGLIB$$ebb633d0.invoke(<generated>) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783) ~[spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:137) ~[spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:124) ~[spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698) ~[spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.batch.item.file.FlatFileItemReader$$EnhancerBySpringCGLIB$$a4b48598.open(<generated>) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	at org.springframework.batch.item.support.CompositeItemStream.open(CompositeItemStream.java:104) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.step.tasklet.TaskletStep.open(TaskletStep.java:311) ~[spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:205) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:152) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.job.AbstractJob.handleStep(AbstractJob.java:413) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.job.SimpleJob.doExecute(SimpleJob.java:136) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:320) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:149) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50) [spring-core-5.3.15.jar:5.3.15]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140) [spring-batch-core-4.3.4.jar:4.3.4]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) [spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) [spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) [spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128) [spring-batch-core-4.3.4.jar:4.3.4]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.3.15.jar:5.3.15]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) [spring-aop-5.3.15.jar:5.3.15]
+	at com.sun.proxy.$Proxy67.run(Unknown Source) [?:?]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.execute(JobLauncherApplicationRunner.java:199) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.executeLocalJobs(JobLauncherApplicationRunner.java:173) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.launchJobFromProperties(JobLauncherApplicationRunner.java:160) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:155) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:150) [spring-boot-autoconfigure-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:760) [spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:750) [spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:309) [spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) [spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) [spring-boot-2.6.3.jar:2.6.3]
+	at br.com.wepdev.springbatch.SpringbatchApplication.main(SpringbatchApplication.java:10) [classes/:?]
+Caused by: java.lang.IllegalArgumentException: Input resource must be set
+	at org.springframework.util.Assert.notNull(Assert.java:201) ~[spring-core-5.3.15.jar:5.3.15]
+	at org.springframework.batch.item.file.FlatFileItemReader.doOpen(FlatFileItemReader.java:251) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	at org.springframework.batch.item.support.AbstractItemCountingItemStreamItemReader.open(AbstractItemCountingItemStreamItemReader.java:150) ~[spring-batch-infrastructure-4.3.4.jar:4.3.4]
+	... 43 more
+2022-03-22 16:44:33,184 INFO o.s.b.c.s.AbstractStep [main] Step: [processadorValidacaoStep] executed in 52ms
+2022-03-22 16:44:33,201 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=processadorValidacaoJob]] completed with the following parameters: [{arquivosClientes=file:files/clientes.txt, run.id=1}] and the following status: [FAILED] in 93ms
+2022-03-22 16:44:33,210 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-03-22 16:44:33,227 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.

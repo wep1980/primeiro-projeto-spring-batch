@@ -15,13 +15,13 @@ public class JdbcCursorReaderStepConfig {
 	@Autowired
 	public StepBuilderFactory stepBuilderFactory;
 	
-//	@Bean
-//	public Step jdbcCursorReaderStep(ItemReader<Cliente> jdbcCursorReader, ItemWriter<Cliente> jdbcCursorWriter) {
-//		return stepBuilderFactory
-//				.get("jdbcCursorReaderStep")
-//				.<Cliente, Cliente>chunk(1)
-//				.reader(jdbcCursorReader)
-//				.writer(jdbcCursorWriter)
-//				.build();
-//	}
+	@Bean
+	public Step jdbcCursorReaderStep(ItemReader<Cliente> jdbcCursorReader, ItemWriter<Cliente> jdbcCursorWriter) {
+		return stepBuilderFactory
+				.get("jdbcCursorReaderStep")
+				.<Cliente, Cliente>chunk(1)
+				.reader(jdbcCursorReader)
+				.writer(jdbcCursorWriter)
+				.build();
+	}
 }

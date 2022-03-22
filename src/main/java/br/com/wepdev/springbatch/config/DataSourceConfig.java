@@ -21,6 +21,10 @@ public class DataSourceConfig {
         return DataSourceBuilder.create().build();
     }
 
+    /**
+     * Buscando os campos configurados no appliocation.properties
+     * @return
+     */
     @Bean
     @ConfigurationProperties(prefix = "app.datasource")
     public DataSource appDataSource(){
