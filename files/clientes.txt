@@ -1,9 +1,10 @@
-Alec,20,odio@Aliquamrutrum.ca
-Daquan,77,interdum.Curabitur@Integervulputaterisus.ca
-Xena,15,Maecenas.malesuada.fringilla@nullaante.edu
-Cody,18,blandit@pulvinararcu.ca
-Olga,38,feugiat@etrutrumnon.net
-Oren,89,neque.sed.sem@quis.ca
-Chanda,41,metus@pharetrafelis.com
-Ivan,66,id@est.ca
-Amos,35,interdum.libero.dui@noncursusnon.co.uk
+0,João,Silva,32,joao@test.com
+1,t1c1,Cadeado,50.80
+1,t2c1,TV,1500
+0,Maria,Silva,30,maria@test.com
+1,t1c2,Geladeira duplex,2000
+1,t2c2,Mesa,4500
+1,t3c2,Sofá,1099,99
+0,José,Silva,20,jose@test.com
+1,t1c3,Comida no Ifood,500.45
+0,Cliente,Sem Transações,20,semtransacoes@test.com

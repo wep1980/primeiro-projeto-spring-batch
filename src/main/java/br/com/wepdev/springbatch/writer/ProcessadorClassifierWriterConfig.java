@@ -1,15 +1,14 @@
 package br.com.wepdev.springbatch.writer;
 
-import br.com.wepdev.springbatch.dominio.Cliente;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-
 @Configuration
-public class ProcessadorScriptWriterConfig {
+public class ProcessadorClassifierWriterConfig {
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Bean
-	public ItemWriter<Cliente> processadorScriptWriter() {
-		return clientes -> clientes.forEach(System.out::println);
+	public ItemWriter processadorClassifierWriter() {
+		return items -> items.forEach(System.out::println);
 	}
 }

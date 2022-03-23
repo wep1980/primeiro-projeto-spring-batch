@@ -5,22 +5,16 @@ import org.hibernate.validator.constraints.Range;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Cliente {
 
-	@NotNull
-	@Size(min = 1, max = 100)
-	@Pattern(regexp = "[a-zA-Z\\s]+", message = "Nome deve ser alfabético") // Valida se o nome esta formado por letras e se possui alguem espaço, e considerado valido
 	private String nome;
-
-	@NotNull
-	@Range(min = 18, max = 200) // Faixa de idade permitida
-	private Integer idade;
-
-	@NotNull
-	@Size(min = 1, max = 50)
-	@Pattern(regexp = "^[A-za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$", message = "Email inválido") // Tipo valido
+	private String sobrenome;
+	private String idade;
 	private String email;
+	private List<Transacao> transacoes = new ArrayList<>();
 
 
 	public String getNome() {
@@ -31,11 +25,19 @@ public class Cliente {
 		this.nome = nome;
 	}
 
-	public Integer getIdade() {
+	public String getSobrenome() {
+		return sobrenome;
+	}
+
+	public void setSobrenome(String sobrenome) {
+		this.sobrenome = sobrenome;
+	}
+
+	public String getIdade() {
 		return idade;
 	}
 
-	public void setIdade(Integer idade) {
+	public void setIdade(String idade) {
 		this.idade = idade;
 	}
 
@@ -46,13 +48,20 @@ public class Cliente {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
+	public List<Transacao> getTransacoes() {
+		return transacoes;
+	}
+
+	public void setTransacoes(List<Transacao> transacoes) {
+		this.transacoes = transacoes;
+	}
+
 	@Override
 	public String toString() {
-		return "Cliente{" +
-	                "nome='" + nome + "'" +
-	                ", idade='" + idade + "'" +
-	                ", email='" + email + "'" +
-				    '}';
+		return "Cliente{" + "nome='" + nome + "'" + ", sobrenome='" + sobrenome + "'" + ", idade='" + idade + "'"
+				+ ", email='" + email + "'" +
+				(transacoes.isEmpty() ? "" : ", transacoes=" + transacoes)
+				+ '}';
 	}
 }
