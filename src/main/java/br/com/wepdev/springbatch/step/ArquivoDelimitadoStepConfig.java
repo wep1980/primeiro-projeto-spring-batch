@@ -10,18 +10,18 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class ArquivoLarguraFixaStepConfig {
+public class ArquivoDelimitadoStepConfig {
 	@Autowired
 	public StepBuilderFactory stepBuilderFactory;
 
 	@Bean
-	public Step leituraArquivoLarguraFixaStep(ItemReader<Cliente> leituraArquivoLarguraFixaReader,
-			ItemWriter<Cliente> leituraArquivoLarguraFixaWriter) {
+	public Step arquivoDelimitadoStep(ItemReader<Cliente> arquivoDelimitadoReader,
+			ItemWriter<Cliente> arquivoDelimitadoWriter) {
 		return stepBuilderFactory
-				.get("arquivoLarguraFixaStep")
+				.get("arquivoDelimitadoStep")
 				.<Cliente, Cliente>chunk(1)
-				.reader(leituraArquivoLarguraFixaReader)
-				.writer(leituraArquivoLarguraFixaWriter)
+				.reader(arquivoDelimitadoReader)
+				.writer(arquivoDelimitadoWriter)
 				.build();
 	}
 }

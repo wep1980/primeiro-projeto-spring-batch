@@ -11,24 +11,19 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 
 @Configuration
-public class ArquivoLarguraFixaWriterConfig {
-	// FIXME: Modificar para escrever em arquivo de largura fixa!
+public class ArquivoDelimitadoWriterConfig {
 
 
-	/**
-	 * Metodo responsavel por escrever aquivo flat formatado
-	 * @return
-	 */
 	@StepScope
 	@Bean
-	public FlatFileItemWriter<Cliente> escritaArquivoLarguraFixaWriter(@Value("#{jobParameters['arquivoClienteSaida']}") Resource arquivoClientesSaida) {
-
+	public FlatFileItemWriter<Cliente> arquivoDelimitadoWriter(@Value("#{jobParameters['arquivoClientesSaida']}")Resource arquivoClientesSaida) {
 		return new FlatFileItemWriterBuilder<Cliente>()
-				.name("escritaArquivoLarguraFixaWriter")
+				.name("arquivoDelimitadoWriter")
 				.resource(arquivoClientesSaida)
-				.formatted() // Formato customizado do arquivo de saida
-				.format("%-9s %-9s %-2s %-19s") // Arquivo de largura fixa informado atraves da expressao regular
-				.names("nome", "sobrenome", "idade", "email") // Os nome de cada String que foi colocada acima
+				.delimited() // Formato do arquivo de escrita
+				.delimiter(";")// Tipo do delimitador
+				.names("nome", "sobrenome", "idade", "email")
 				.build();
+
 	}
 }
