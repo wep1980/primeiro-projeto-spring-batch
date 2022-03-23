@@ -11,15 +11,18 @@ import org.springframework.context.annotation.Configuration;
 
 @EnableBatchProcessing
 @Configuration
-public class ProcessadorClassifierJobConfig {
+public class ArquivoLarguraFixaJobConfig {
+
+
 	@Autowired
 	public JobBuilderFactory jobBuilderFactory;
-	
+
+
 	@Bean
-	public Job processadorClassifierJob(Step processadorClassifierStep) {
+	public Job arquivoLarguraFixaJob(Step leituraArquivoLarguraFixaStep) {
 		return jobBuilderFactory
-				.get("processadorClassifierJob")
-				.start(processadorClassifierStep)
+				.get("arquivoLarguraFixaJob")
+				.start(leituraArquivoLarguraFixaStep)
 				.incrementer(new RunIdIncrementer())
 				.build();
 	}
