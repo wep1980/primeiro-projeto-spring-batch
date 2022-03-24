@@ -9,9 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@EnableBatchProcessing
 @Configuration
-public class ArquivoDelimitadoJobConfig {
+@EnableBatchProcessing
+public class DemonstrativoOrcamentarioJobConfig {
 
 
 	@Autowired
@@ -19,10 +19,10 @@ public class ArquivoDelimitadoJobConfig {
 
 	
 	@Bean
-	public Job arquivoDelimitadoJob(Step leituraArquivoDelimitadoStep) {
+	public Job demonstrativoOrcamentarioJob(Step demonstrativoOrcamentarioStep) {
 		return jobBuilderFactory
-				.get("arquivoDelimitadoJob")
-				.start(leituraArquivoDelimitadoStep)
+				.get("demonstrativoOrcamentarioJob")
+				.start(demonstrativoOrcamentarioStep)
 				.incrementer(new RunIdIncrementer())
 				.build();
 	}
