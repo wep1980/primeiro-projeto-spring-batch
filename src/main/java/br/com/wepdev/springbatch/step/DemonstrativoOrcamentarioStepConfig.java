@@ -2,6 +2,7 @@ package br.com.wepdev.springbatch.step;
 
 import br.com.wepdev.springbatch.dominio.GrupoLancamento;
 import br.com.wepdev.springbatch.reader.GrupoLancamentoReader;
+import br.com.wepdev.springbatch.writer.DemonstrativoOrcamentarioRodape;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.item.ItemWriter;
@@ -18,17 +19,14 @@ public class DemonstrativoOrcamentarioStepConfig {
 
 	
 	@Bean
-	public Step demonstrativoOrcamentarioStep(
-			// Esse aqui lê dos arquivos
-			//MultiResourceItemReader<GrupoLancamento> demonstrativoOrcamentarioReader,
-			// Esse aqui lê do banco de dados
-			GrupoLancamentoReader demonstrativoOrcamentarioReader,
-			ItemWriter<GrupoLancamento> demonstrativoOrcamentarioWriter) {
+	public Step demonstrativoOrcamentarioStep(GrupoLancamentoReader demonstrativoOrcamentarioReader,
+			ItemWriter<GrupoLancamento> demonstrativoOrcamentarioWriter, DemonstrativoOrcamentarioRodape rodapeCallback) {
 		return stepBuilderFactory
 				.get("demonstrativoOrcamentarioStep")
 				.<GrupoLancamento,GrupoLancamento>chunk(100)
 				.reader(demonstrativoOrcamentarioReader)
 				.writer(demonstrativoOrcamentarioWriter)
+				.listener(rodapeCallback) // Esse metodo fica escutando o evento do totalGeral, que esta no metodo writeFooter(), esse componente esta registrado no Spring.
 				.build();
 	}
 }
