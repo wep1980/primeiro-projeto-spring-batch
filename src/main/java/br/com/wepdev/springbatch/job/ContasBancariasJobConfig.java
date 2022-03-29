@@ -9,20 +9,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
 @EnableBatchProcessing
-public class DemonstrativoOrcamentarioJobConfig {
+@Configuration
+public class ContasBancariasJobConfig {
 
 
 	@Autowired
-	public JobBuilderFactory jobBuilderFactory;
+	private JobBuilderFactory jobBuilderFactory;
 
 	
 	@Bean
-	public Job demonstrativoOrcamentarioJob(Step demonstrativoOrcamentarioStep) {
+	public Job contasBancariasJob(Step criacaoContasStep) {
 		return jobBuilderFactory
-				.get("demonstrativoOrcamentarioJob")
-				.start(demonstrativoOrcamentarioStep)
+				.get("contasBancariasJob")
+				.start(criacaoContasStep)
+				// Para não precisar apagar os metadados.
 				.incrementer(new RunIdIncrementer())
 				.build();
 	}
