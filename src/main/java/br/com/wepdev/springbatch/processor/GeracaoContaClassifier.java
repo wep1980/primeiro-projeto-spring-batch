@@ -9,7 +9,9 @@ import br.com.wepdev.springbatch.dominio.TipoConta;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.classify.Classifier;
 
-
+/**
+ * Classe processadora de tipos de conta
+ */
 @SuppressWarnings("serial")
 public class GeracaoContaClassifier implements Classifier<Cliente, ItemProcessor<?, ? extends Conta>> {
 	// Padrão de projeto para evitar o uso de if's no classificador.
@@ -18,6 +20,7 @@ public class GeracaoContaClassifier implements Classifier<Cliente, ItemProcessor
 		put(TipoConta.OURO, new ContaOuroItemProcessor());
 		put(TipoConta.PLATINA, new ContaPlatinaItemProcessor());
 		put(TipoConta.DIAMANTE, new ContaDiamanteItemProcessor());
+		put(TipoConta.INVALIDA, new ContaInvalidaItemProcessor());
 	}};
 
 	@Override
